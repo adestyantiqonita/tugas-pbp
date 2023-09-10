@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h5>Qoqon Collections </h5>
+<p>{{name}}</p>
+
+<table>
+    <tr>
+        <th>Nama</th>
+        <th>Jumlah</th>
+        <th>Deskripsi</th>
+    </tr>
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+
+    {% for assignment in assignment_data %}
+    <tr>
+        <td>{{assignment.name}}</td>
+        <td>{{assignment.amount}}</td>
+        <td>{{assignment.description}}</td>
+    </tr>
+</table>
+
+{% endblock content %}
