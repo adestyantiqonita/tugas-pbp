@@ -1,23 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h5>Qoqon Collections </h5>
-<p>{{name}}</p>
+    <h1>Shopping List Page</h1>
+
+    <h5>Name:</h5>
+    <p>{{name}}</p>
+
+    <h5>Class:</h5>
+    <p>{{class}}</p>
 
 <table>
     <tr>
-        <th>Nama</th>
-        <th>Jumlah</th>
-        <th>Deskripsi</th>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Description</th>
     </tr>
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
 
-    {% for assignment in assignment_data %}
-    <tr>
-        <td>{{assignment.name}}</td>
-        <td>{{assignment.amount}}</td>
-        <td>{{assignment.description}}</td>
-    </tr>
+    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+
+    {% for item in item %}
+        <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.amount}}</td>
+            <td>{{item.description}}</td>
+        </tr>
+    {% endfor %}
 </table>
+
+<br />
+
+<a href="{% url 'main:create_item' %}">
+    <button>
+        Add New Item
+    </button>
+</a>
 
 {% endblock content %}

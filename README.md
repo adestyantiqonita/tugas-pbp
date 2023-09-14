@@ -38,3 +38,9 @@ Model dan View memiliki fungsi yang sama, namun Template adalah bagian yang memi
 
 MVVM (Model-View-ViewModel) memperkenalkan ViewModel, yang bertindak sebagai perantara antara Model dan View, memisahkan tampilan dari logika interaksi pengguna
 Model dan View memiliki fungsi yang sama, namun ada ViewModel yang merupakan lapisan yang berfungsi sebagai perantara antara Model dan View. ViewModel mengambil data dari Model dan memformatnya agar sesuai dengan tampilan yang akan ditampilkan di View serta mengelola interaksi pengguna dengan data, sehingga View tidak perlu memiliki logika interaksi yang kompleks.
+
+- ## Apa perbedaan antara form POST dan form GET dalam Django?
+ - ## Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+ - ## Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+ - ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+ - ## Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
