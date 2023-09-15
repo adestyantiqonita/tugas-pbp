@@ -1,15 +1,15 @@
-## Qonita Adestyanti
-## 2106750925
+# Qonita Adestyanti
+# 2106750925
 
 - Tautan menuju aplikasi Adaptable yang sudah kamu deploy
 https://qoqoncollections.adaptable.app
 
-## Tugas 1
+# Tugas 1
 
-- # Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+- ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Pertama, buat dulu direktori serta environtment-nya dan dependecies-nya. Setelah itu kerjakan aplikasinya seperti yang tertera pada tutorial. Kemudian implementasi MTV, Models, Templates dan Viewsnya. Digabungin semua. Tak lupa routing dan testing. Terakhir di-deploy ke Adaptable
 
-- # Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+- ## Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
      Request dari Client
               |
               v 
@@ -23,12 +23,12 @@ Pertama, buat dulu direktori serta environtment-nya dan dependecies-nya. Setelah
 
 Penjelasan: Request (permintaan) datang dari Client (browser/aplikasi). urls.py berisi pengaturan URL yang menghubungkan permintaan dari client. views.py berisi logika dari program yang menerima permintaan dari urls.py, memprosesnya, dan kemudian merespons dengan data yang akan ditampilkan di dalam HTML serta dapat berinteraksi dengan models.py. models.py berisi defini model aplikasi yang mendefinisikan bagaimana data akan disimpan dan diatur dalam database. html berisi struktur dan tampilan halaman web yang akan diberikan kepada client. Views akan mengisi data yang sesuai ke dalam HTML untuk kemudian dikirimkan sebagai respons ke client
 
-- # Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
+- ## Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
 Mengisolasi environtment dari aplikasi tersebut. Misal nanti ada dua aplikasi yang satunya menggunakan python versi 2.x dan yang satunya lagi menggunakan python versi 3.x, nanti mereka gabakal kecampur sehingga tidak ada fungsi yang error saat ada update dari dependencies. Kurang lebih, sebagai management dependencies. 
 
 
-- # Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
+- ## Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
 
 MVC (Model-View-Controller) yang sering digunakan,
 Model menyimpan dan mengelola data serta logika bisnis aplikasi. View bertanggung jawab untuk menampilkan data kepada pengguna. Controller menerima input dari pengguna, memprosesnya, dan menghubungkannya dengan Model atau View yang sesuai.
@@ -39,8 +39,30 @@ Model dan View memiliki fungsi yang sama, namun Template adalah bagian yang memi
 MVVM (Model-View-ViewModel) memperkenalkan ViewModel, yang bertindak sebagai perantara antara Model dan View, memisahkan tampilan dari logika interaksi pengguna
 Model dan View memiliki fungsi yang sama, namun ada ViewModel yang merupakan lapisan yang berfungsi sebagai perantara antara Model dan View. ViewModel mengambil data dari Model dan memformatnya agar sesuai dengan tampilan yang akan ditampilkan di View serta mengelola interaksi pengguna dengan data, sehingga View tidak perlu memiliki logika interaksi yang kompleks.
 
+# TUGAS 2
+
 - ## Apa perbedaan antara form POST dan form GET dalam Django?
- - ## Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
- - ## Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
- - ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
- - ## Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+Request sensitif yang menimbulkan perubahan pada database system sebaiknya menggunakan POST sedangkan apabila request-nya tidak menimbulkan perubahan pada server system, maka lebih baik menggunakan GET saja. Menggunakan method POST pun lebih aman karena tidak terlihat di URL daripada GET. 
+
+- ## Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+- XML (Extensible Markup Language)
+Digunakan untuk pertukaran data terstruktur.
+Memiliki sintaksis berbasis tag yang dapat disesuaikan.
+Ekstensibel dan cocok untuk validasi data.
+
+- JSON (JavaScript Object Notation):
+Digunakan untuk pertukaran data sederhana dalam format key-value.
+Sintaksis mirip dengan objek JavaScript.
+Lebih ringkas dan mudah dibaca oleh manusia.
+
+- HTML (Hypertext Markup Language):
+Digunakan untuk membuat tampilan dan antarmuka pengguna web.
+Digunakan untuk merender halaman web.
+Bukan format data struktural yang umum digunakan untuk pertukaran data.
+
+- ## Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+karena format pertukaran data yang sangat ringan serta lebih mudah dibaca dan ditulis oleh manusia, sehingga mudah untuk diterjemahkan dan dibuat (generate) oleh komputer
+
+- ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+Mengerjalan pada direktori tugas_pbp yang telah dikerjakan. Membuat form dengan membuat html untuk halaman utama formnya sebagai templatenya kemudian dikaitkan dengan views serta fungsi-fungsi def pada models. Kemudian menambahkan 5 fungsi views yang dapat berinteraksi (request dan respond). Setelahnya di routing dengan memsukkan url pada urls.py. 
+- ## Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
