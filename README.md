@@ -66,7 +66,7 @@ karena format pertukaran data yang sangat ringan serta lebih mudah dibaca dan di
 - ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Mengerjalan pada direktori tugas_pbp yang telah dikerjakan. Membuat form dengan membuat html untuk halaman utama formnya sebagai templatenya kemudian dikaitkan dengan views serta fungsi-fungsi def pada models. Kemudian menambahkan 5 fungsi views yang dapat berinteraksi (request dan respond). Setelahnya di routing dengan memsukkan url pada urls.py. 
 - ## Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
-![Uploading Screenshot 2023-09-15 at 20.09.03.png…]()
+<img width="854" alt="Screenshot 2023-09-15 at 20 16 06" src="https://github.com/adestyantiqonita/tugas-pbp/assets/94448470/6a93c2a1-01eb-4f50-aabc-18f347e57f7a">
 <img width="856" alt="Screenshot 2023-09-15 at 20 03 58" src="https://github.com/adestyantiqonita/tugas-pbp/assets/94448470/365d5f7b-3307-4281-9056-bea942390a34">
 <img width="859" alt="Screenshot 2023-09-15 at 20 04 16" src="https://github.com/adestyantiqonita/tugas-pbp/assets/94448470/137e077e-625e-4abb-850a-8122fb88acf5">
 <img width="854" alt="Screenshot 2023-09-15 at 20 04 37" src="https://github.com/adestyantiqonita/tugas-pbp/assets/94448470/1bd1a007-a9c7-4092-a2bb-a8a50697d97c">
