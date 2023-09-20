@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Shopping List Page</h1>
+    <h1>Qoqon's Collections</h1>
 
     <h5>Name:</h5>
     <p>{{name}}</p>
@@ -18,7 +18,7 @@
 
     {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
 
-    {% for item in item %}
+    {% for item in items %}
         <tr>
             <td>{{item.name}}</td>
             <td>{{item.amount}}</td>
@@ -35,4 +35,11 @@
     </button>
 </a>
 
+<a href="{% url 'main:logout' %}">
+    <button>
+        Logout
+    </button>
+</a>
+
+<h5>Sesi terakhir login: {{ last_login }}</h5>
 {% endblock content %}

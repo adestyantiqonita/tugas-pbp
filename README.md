@@ -71,3 +71,19 @@ Mengerjalan pada direktori tugas_pbp yang telah dikerjakan. Membuat form dengan 
 <img width="859" alt="Screenshot 2023-09-15 at 20 04 16" src="https://github.com/adestyantiqonita/tugas-pbp/assets/94448470/137e077e-625e-4abb-850a-8122fb88acf5">
 <img width="854" alt="Screenshot 2023-09-15 at 20 04 37" src="https://github.com/adestyantiqonita/tugas-pbp/assets/94448470/1bd1a007-a9c7-4092-a2bb-a8a50697d97c">
 <img width="857" alt="Screenshot 2023-09-15 at 20 04 52" src="https://github.com/adestyantiqonita/tugas-pbp/assets/94448470/392d063f-1ef1-48e0-988f-9fe0d668390f">
+
+- ## Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+UserCreationForm adalah salah satu fitur yang disediakan oleh Django untuk membuat form dengan mudah dalam pembuatan web yang terdiri dari tiga fields, yaitu username, password1, dan password 2 (untuk konfirmasi password). Fitur ini selain mudah digunakan juga sudah di integrasi dengan model "User" sehingga data yang dimasukkan akan langsung masuk ke database. Namun, karena berasal dari Django, maka fitur ini akan bergantung pada Django dan perlu dikembangkan formulir sendiri jika tidak ingin kustomisasi standar.
+- ## Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+Autentikasi adalah proses memeriksa identitas pengguna dan memastikan bahwa orang tersebut merupakan user yang sebenarnya. Memiliki fungsi untuk memverifikasi apakah User tersebut memiliki hak akses ke aplikasi dengan memvalidasi identitas dengan cara melibatkan proses  login, autentikasi berbasis token, ataupun otentikasi pihak ketiga. Sedangkan Otorisasi proses menentukan hak akses yang dimiliki oleh User setelah orang tersebut berhasil diautentikasi. Memiliki fungsi untuk memeriksa apa yang diizinkan atau tidak diizinkan oleh User  setelah diautentikasi, yakni menentukan apa yang dapat dilihat, diubah, atau diakses oleh User dalam aplikasi berdasarkan peran (roles) atau izin (permissions) yang diberikan.
+
+Kedua hal tersebut penting karena untuk memberikan keamanan kepada User serta pengalaman yang baik. Sehingga mereka merasa aman dengan data yang mereka input. Hal ini juga merupakan bagian dari kepatuhan kepada hukum akan perlindungan keamanan. 
+
+- ## Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+Cookies merupakan semacam file yang ditempatkan pada komputer user saat berkunjung ke website tertentu. Tujuannya agar website tersebut dapat merekam kegiatan yang pengguna lakukan saat berkunjung Sehingga tidak perlu untuk loading ke fungsi yang sama dan dapat meningkatkan efisien dan efektivitas. 
+
+- ## Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+Aman saja asalkan penggunaannya benar. Ada beberapa risiko potensial, beberapa diantaranya keamanan data karena cookie yang tidak dienskripsi, risiko CSRF, cookie beresiko dicuri dan masih banyak lagi. 
+
+- ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+Membuat fungsi form, tombol login serta logout pada views.py yang menerima request. Tidak lupa meng-import library yang dibutuhkan serta menambah halaman untuk form registrasinya. Menambahkan cookie pada code last login. Yang terakhir menghubungkan model Product dengan User sehingga pengguna yang sedang terotorisasi hanya melihat produk-produk yang telah dibuat sendiri.
