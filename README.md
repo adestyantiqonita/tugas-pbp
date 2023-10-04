@@ -4,7 +4,7 @@
 - Tautan menuju aplikasi Adaptable yang sudah kamu deploy
 https://qoqoncollections.adaptable.app
 
-# Tugas 1
+# TUGAS 2
 
 - ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Pertama, buat dulu direktori serta environtment-nya dan dependecies-nya. Setelah itu kerjakan aplikasinya seperti yang tertera pada tutorial. Kemudian implementasi MTV, Models, Templates dan Viewsnya. Digabungin semua. Tak lupa routing dan testing. Terakhir di-deploy ke Adaptable
@@ -39,7 +39,7 @@ Model dan View memiliki fungsi yang sama, namun Template adalah bagian yang memi
 MVVM (Model-View-ViewModel) memperkenalkan ViewModel, yang bertindak sebagai perantara antara Model dan View, memisahkan tampilan dari logika interaksi pengguna
 Model dan View memiliki fungsi yang sama, namun ada ViewModel yang merupakan lapisan yang berfungsi sebagai perantara antara Model dan View. ViewModel mengambil data dari Model dan memformatnya agar sesuai dengan tampilan yang akan ditampilkan di View serta mengelola interaksi pengguna dengan data, sehingga View tidak perlu memiliki logika interaksi yang kompleks.
 
-# TUGAS 2
+# TUGAS 3
 
 - ## Apa perbedaan antara form POST dan form GET dalam Django?
 Request sensitif yang menimbulkan perubahan pada database system sebaiknya menggunakan POST sedangkan apabila request-nya tidak menimbulkan perubahan pada server system, maka lebih baik menggunakan GET saja. Menggunakan method POST pun lebih aman karena tidak terlihat di URL daripada GET. 
@@ -72,6 +72,8 @@ Mengerjalan pada direktori tugas_pbp yang telah dikerjakan. Membuat form dengan 
 <img width="854" alt="Screenshot 2023-09-15 at 20 04 37" src="https://github.com/adestyantiqonita/tugas-pbp/assets/94448470/1bd1a007-a9c7-4092-a2bb-a8a50697d97c">
 <img width="857" alt="Screenshot 2023-09-15 at 20 04 52" src="https://github.com/adestyantiqonita/tugas-pbp/assets/94448470/392d063f-1ef1-48e0-988f-9fe0d668390f">
 
+# TUGAS 4
+
 - ## Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
 UserCreationForm adalah salah satu fitur yang disediakan oleh Django untuk membuat form dengan mudah dalam pembuatan web yang terdiri dari tiga fields, yaitu username, password1, dan password 2 (untuk konfirmasi password). Fitur ini selain mudah digunakan juga sudah di integrasi dengan model "User" sehingga data yang dimasukkan akan langsung masuk ke database. Namun, karena berasal dari Django, maka fitur ini akan bergantung pada Django dan perlu dikembangkan formulir sendiri jika tidak ingin kustomisasi standar.
 - ## Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
@@ -87,3 +89,25 @@ Aman saja asalkan penggunaannya benar. Ada beberapa risiko potensial, beberapa d
 
 - ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Membuat fungsi form, tombol login serta logout pada views.py yang menerima request. Tidak lupa meng-import library yang dibutuhkan serta menambah halaman untuk form registrasinya. Menambahkan cookie pada code last login. Yang terakhir menghubungkan model Product dengan User sehingga pengguna yang sedang terotorisasi hanya melihat produk-produk yang telah dibuat sendiri.
+
+
+# TUGAS 5
+
+- ## Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+Element Selector dapat digunakan untuk memilih elemen HTML dengan tipe tertentu berdasarkan apa yang diinginkan, nanti bakal diaplikasikan ke seluruh elemen yang sudah disetting. Sebagai contoh : 
+.header h1 {
+  font-size: 12px;
+  color: #777;
+}
+
+maka nanti elemen < h1 > dengan class header akan memiliki gaya sesuai settingan yang telah ditulis diatas. 
+
+- ## Jelaskan HTML5 Tag yang kamu ketahui.
+Hypertext Markup Language 5 merupakan HTML versi terbaru. HTML5 Tag adalah bagian dari kode HTML yang digunakan untuk mendefinisikan elemen-elemen dalam halaman web yang diawali dengan tanda kurung sudut (<) dan diakhiri dengan tanda kurung sudut pula (>). HTML5 Tag membantu browser web untuk memahami dan merender konten halaman web dengan benar. Contohnya ada <html>, <head>, <link>, dan lainnya. 
+
+
+- ## Jelaskan perbedaan antara margin dan padding.
+Margin adalah sebuah ruang diluar elemen sehingga dapat mengatur jarak antara HTML dan dengan elemen disekitarnya, nilainya dapat negatif sehingga bisa bertumpang tindih dengan elemen lainnya, dan tidak mempengaruhi tampilan elemen karna tidak memiliki background atau warna. Sedangkan Padding adalah ruang didalam elemen sehingga dapat mengatur jarak antara batas elemen HTML dengan kontennya itu sendiri, nilainya tidak bisa negatif serta dapat menggunakan background dan warna sehingga dapat mempengaruhi tampilan dari elemen tersebut. 
+
+- ## Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+Boostrap menerapkan component-first yang artinya komponen dan gaya telah ditentukan sebelumnya. Sedangkan Tailwind menerapkan utility-first yang artinya membangun tampilan dengan menggabungkan kelas-kelas kecil yang menggambarkan perilaku terlebih dahulu. Tailwind lebih dapat di-custom daripada Bootstap. Boootstap leb ih mudah dipelajari daripada Tailwind. Sehingga, apabila ingin membuat web yang banyak customnya dan bisa belajar lebih, maka lebih disarankan menggunakan Tailwind. Namun, apabila pemula dan cukup dengan web sederhana(tidak banyak customnya) saja, lebih disarankan menggunakan Bootstrap. 

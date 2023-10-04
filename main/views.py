@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from main.models import Item
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from main.forms import ItemForm
 from django.urls import reverse
 from django.core import serializers
@@ -14,7 +15,6 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-# Create your views here.
 @login_required(login_url='/login')
 def show_main(request):
     items = Item.objects.filter(user=request.user)
@@ -31,9 +31,9 @@ def create_item(request):
     form = ItemForm(request.POST or None)
 
     if form.is_valid() and request.method == "POST":
-        product = form.save(commit=False)
-        product.user = request.user
-        product.save()
+        item = form.save(commit=False)
+        item.user = request.user
+        item.save()
         return HttpResponseRedirect(reverse('main:show_main'))
 
     context = {'form': form}
@@ -85,3 +85,20 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+
+def edit_item(request, id):
+    item = Item.objects.get(pk = id)
+
+    form = ItemForm(request.POST or None, instance=item)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_item.html", context)
+
+def delete_item(request, id):
+    item = Item.objects.get(pk = id)
+    item.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))
