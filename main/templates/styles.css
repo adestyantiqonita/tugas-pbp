@@ -1,0 +1,98 @@
+/* Reset some default styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #BCA37F;
+}
+
+/* Style the container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #EAD7BB;
+  box-shadow: 0 0 10px rgb(234, 215, 187);
+  border-radius: 5px;
+}
+
+/* Style the header */
+.container h1 {
+  font-size: 36px;
+  color: #65451F;
+  text-align: center;
+}
+
+/* Style the headings */
+.container h5 {
+  font-size: 18px;
+  color: #C8AE7D;
+}
+
+/* Style the paragraphs */
+.container p {
+  font-size: 16px;
+  color: #EAC696;
+}
+
+/* Style the table */
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.container th,
+.container td {
+  padding: 10px;
+  border: 1px solid #113946;
+  text-align: left;
+}
+
+/* Style table header */
+.container th {
+  background-color: #A9907E;
+  color: #fff;
+}
+
+/* Style table rows */
+.container tr:nth-child(even) {
+  background-color: #915c6e4f;
+}
+
+/* Style the buttons */
+.container button {
+  background-color: #F3DEBA;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.container button:hover {
+  background-color: #ABC4AA;
+}
+
+/* Style the logout message */
+.container h5:last-child {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+/* Style the links */
+.container a {
+  text-decoration: none;
+  color: #3F2305;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}

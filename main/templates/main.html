@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
+{% block meta %}
+    <title>Main Page</title>
+{% endblock meta %}
+
 {% block content %}
+
+<div class="container">
     <h1>Qoqon's Collections</h1>
 
     <h5>Name:</h5>
@@ -9,49 +15,51 @@
     <h5>Class:</h5>
     <p>{{class}}</p>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Amount</th>
-        <th>Description</th>
-    </tr>
-
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-    {% for item in items %}
+    <table>
         <tr>
-            <td>{{item.name}}</td>
-            <td>{{item.amount}}</td>
-            <td>{{item.description}}</td>
-            <td>
-                <a href="{% url 'main:edit_item' item.pk %}">
-                    <button>
-                        Edit
-                    </button>
-                </a>
-                <a href="{% url 'main:delete_item' item.pk %}">
-                      <button>
-                          Delete
-                      </button>
-                  </a>
-            </td>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Description</th>
         </tr>
-    {% endfor %}
-</table>
 
-<br />
+        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
 
-<a href="{% url 'main:create_item' %}">
-    <button>
-        Add New Item
-    </button>
-</a>
+        {% for item in items %}
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.description}}</td>
+                <td>
+                    <a href="{% url 'main:edit_item' item.pk %}">
+                        <button>
+                            Edit
+                        </button>
+                    </a>
+                    <a href="{% url 'main:delete_item' item.pk %}">
+                        <button>
+                            Delete
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
 
-<a href="{% url 'main:logout' %}">
-    <button>
-        Logout
-    </button>
-</a>
+    <br />
 
-<h5>Sesi terakhir login: {{ last_login }}</h5>
+    <a href="{% url 'main:create_item' %}">
+        <button>
+            Add New Item
+        </button>
+    </a>
+
+    <a href="{% url 'main:logout' %}">
+        <button>
+            Logout
+        </button>
+    </a>
+
+    <h5>Last login session: {{ last_login }}</h5>
+</div>
+
 {% endblock content %}
