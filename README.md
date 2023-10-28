@@ -111,3 +111,18 @@ Margin adalah sebuah ruang diluar elemen sehingga dapat mengatur jarak antara HT
 
 - ## Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
 Boostrap menerapkan component-first yang artinya komponen dan gaya telah ditentukan sebelumnya. Sedangkan Tailwind menerapkan utility-first yang artinya membangun tampilan dengan menggabungkan kelas-kelas kecil yang menggambarkan perilaku terlebih dahulu. Tailwind lebih dapat di-custom daripada Bootstap. Boootstap leb ih mudah dipelajari daripada Tailwind. Sehingga, apabila ingin membuat web yang banyak customnya dan bisa belajar lebih, maka lebih disarankan menggunakan Tailwind. Namun, apabila pemula dan cukup dengan web sederhana(tidak banyak customnya) saja, lebih disarankan menggunakan Bootstrap. 
+
+# TUGAS 6
+
+- ## Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+Kalo synchronous programming mengeksekusi tugas satu per satu dan menunggu setiap tugas selesai sebelum melanjutkan ke tugas selanjutnya, sedangkan asynchronous programming memungkinkan eksekusi tugas tanpa harus menunggu selesai dan memungkinkan program untuk tetap responsif terhadap input eksternal dan perubahan lingkungan lainnya
+
+- ## Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+Paradigma event-driven programming adalah pendekatan pemrograman di mana aliran eksekusi program ditentukan oleh kejadian (event) yang terjadi, seperti interaksi pengguna, sinyal sistem, atau notifikasi dari program lain. Dalam implementasinya, event-driven programming dalam JavaScript melibatkan pendefinisian event listener atau handler untuk menangani kejadian tertentu, seperti klik mouse, pengisian formulir, atau respon dari permintaan AJAX. Dalam tugas ini, misal add item dengan ajax nanti tombolnya di klik mouse, ngisi penambahan item. 
+
+- ## Jelaskan penerapan asynchronous programming pada AJAX.
+ XMLHttpRequest (XHR) digunakan untuk membuat permintaan ke server tanpa harus memuat ulang halaman. Melalui XHR, permintaan HTTP dapat dikirimkan secara asynchronous, dan respon dari server dapat di-handle tanpa mengganggu eksekusi program. Event handler untuk menangani respons yang diterima dari server. Ketika respon diterima, event handler ini memproses data tanpa menghentikan eksekusi program lainnya. Callback functions digunakan untuk menentukan tindakan apa yang harus dilakukan setelah permintaan AJAX selesai. Promises atau async/await untuk mengelola operasi asynchronous.
+
+- ## Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+Fetch API tersedia di semua browser terbaru tanpa memerlukan dependensi tambahan, menggunakan promises untuk mengelola respons dari server, sehingga memungkinkan pengelolaan error dan respons lebih terstruktur serta lebih ringan daripada jQuery, karena fokus utamanya adalah pada fitur-fitur terkait permintaan HTTP. Sedangkan JQuery memiliki kompatibilitas lintas browser yang baik, dan menyediakan berbagai utilitas tambahan untuk manipulasi DOM dan animasi serta memiliki fitur-fitur lain yang mempermudah manipulasi dan navigasi DOM, membuatnya menjadi pilihan yang baik untuk proyek-proyek yang membutuhkan dukungan lintas browser dan fitur-fitur tambahan. Kalo untuk pemula lebih baik menggunakan Fetch API karena pada awalnya hanya menggunakan AJAX yang sederhana, sedangkan kalo mau nex level, misal mau lintas browser gitu, lebih baik gunakan JQuery. 
+

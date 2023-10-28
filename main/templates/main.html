@@ -1,65 +1,152 @@
 {% extends 'base.html' %}
 
-{% block meta %}
-    <title>Main Page</title>
-{% endblock meta %}
-
 {% block content %}
+    <!-- Stylish Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">{{ name }} - {{ class }}</a>
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-shop text-danger me-2"></i>Qoqon's Collection
+            </a>
+            <div class="d-flex">
+                <a href="{% url 'main:logout' %}">
+                    <button class="btn btn-outline-danger">Logout</button>
+                </a>
+            </div>
+        </div>
+    </nav>
 
-<div class="container">
-    <h1>Qoqon's Collections</h1>
+    <!-- Stylish Heading -->
+    <div class="text-center mt-5">
+        <h1 class="display-4 text-primary fw-bold">Welcome to Qoqon's Collection</h1>
+    </div>
 
-    <h5>Name:</h5>
-    <p>{{name}}</p>
+    <!-- Stylish Table -->
+    <div class="container mt-5">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date Added</th>
+                </tr>
+            </thead>
+            <tbody id="product_table">
+                <!-- Table rows will be dynamically added here -->
+                {% for item in items %}
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.date_added}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-    <h5>Class:</h5>
-    <p>{{class}}</p>
+    <!-- Stylish Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="exampleModalLabel">Add New Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Price:</label>
+                            <input type="number" class="form-control" id="price" name="price">
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Description</th>
-        </tr>
+    <!-- Stylish Buttons -->
+    <div class="d-flex justify-content-center mt-4">
+        <button type="button" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product with AJAX</button>
+        <a href="{% url 'main:create_item' %}" class="btn btn-primary">Add New Product</a>
+    </div>
 
-        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-        {% for item in items %}
-            <tr>
-                <td>{{item.name}}</td>
-                <td>{{item.amount}}</td>
-                <td>{{item.description}}</td>
-                <td>
-                    <a href="{% url 'main:edit_item' item.pk %}">
-                        <button>
-                            Edit
-                        </button>
-                    </a>
-                    <a href="{% url 'main:delete_item' item.pk %}">
-                        <button>
-                            Delete
-                        </button>
-                    </a>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
-
-    <br />
-
-    <a href="{% url 'main:create_item' %}">
-        <button>
-            Add New Item
-        </button>
-    </a>
-
-    <a href="{% url 'main:logout' %}">
-        <button>
-            Logout
-        </button>
-    </a>
-
-    <h5>Last login session: {{ last_login }}</h5>
-</div>
-
+    <!-- Last Login Information -->
+    <div class="text-center mt-4">
+        <h5 class="text-muted">Last Login Session: {{ last_login }}</h5>
+    </div>
 {% endblock content %}
+
+<!-- Bagian HTML dan template Django lainnya -->
+
+<script>
+    async function getProducts() {
+        return fetch("{% url 'main:get_item_json' %}").then((res) => res.json());
+    }
+
+    async function refreshProducts() {
+        const productTable = document.getElementById("product_table");
+        productTable.innerHTML = `
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Date Added</th>
+                </tr>
+            </thead>
+            <tbody id="product_table_body"></tbody>
+        `;
+
+        const products = await getProducts();
+        const tbody = productTable.querySelector("#product_table_body");
+        products.forEach((item) => {
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td>${item.name}</td>
+                <td>${item.price}</td>
+                <td>${item.description}</td>
+                <td>${item.date_added}</td>
+            `;
+            tbody.appendChild(newRow);
+        });
+    }
+
+    async function addProduct() {
+        const form = document.getElementById("form");
+        const formData = new FormData(form);
+
+        const response = await fetch("{% url 'main:add_item_ajax' %}", {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": "{{ csrf_token }}",
+            },
+            body: formData,
+        });
+
+        if (response.ok) {
+            refreshProducts();
+            form.reset();
+        } else {
+            console.error('Failed to add product');
+        }
+
+        return false;
+    }
+
+    document.getElementById("button_add").onclick = addProduct;
+</script>
